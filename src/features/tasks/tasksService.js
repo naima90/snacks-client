@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:5000/api/tasks/";
+const API_URL = "https://snack-server-test.herokuapp.com/api/tasks/";
 
 const getTasks = async (data) => {
   const { token } = data
@@ -18,7 +18,7 @@ const getTasks = async (data) => {
 const createTask = async (data) => {
   const { task, token } = data
 
-  const config = {
+  const config = { 
     headers: {
       Authorization: `Bearer ${token}`
     }
