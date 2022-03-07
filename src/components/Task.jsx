@@ -2,6 +2,7 @@ import DoneButton from "./DoneButton";
 import Card from "react-bootstrap/Card";
 
 const Task = ({ task, onDone }) => {
+  console.log(task)
   return (
     <Card key={task._id} className="task-card">
       <div className="task-text">{task.text}</div>

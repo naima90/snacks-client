@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
+import {SortableContainer} from 'react-sortable-hoc';
+// import ToDoList from './components/ToDoList';
+import { arrayMove } from 'react-sortable-hoc';
 
 function Dashboard() {
   // For redirecting to different pages
@@ -21,7 +24,8 @@ function Dashboard() {
   }, [user, navigate]);
 
   const [tasks, setTasks] = useState([]);
-
+  const SortableList = SortableContainer(TaskList);
+  //const [todos, setTodos] = useState(todosInit);
   // gets all user tasks
   useEffect(() => {
     async function fetchTasks() {
@@ -85,13 +89,24 @@ function Dashboard() {
   // example format for making a request
   //   axios.delete(url, task, config)
   // }
-
+  
+  const state = {
+    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'],
+  };
+  const onSortEnd = ({oldIndex, newIndex}) => {
+    this.setState(({items}) => ({
+      items: arrayMove(items, oldIndex, newIndex),
+    }));
+  };
   return (
     <div>
       <h1>Snacks</h1>
       <AddTask onAdd={addTask} />
       {tasks.length > 0 ? (
-        <TaskList tasks={tasks} onDone={onDone} />
+         <div>
+        {/* <TaskList tasks={tasks} onSortEnd={onSortEnd} /> */}
+        <SortableList tasks={tasks} onSortEnd={onSortEnd}/>
+        </div>
       ) : (
         "You have no tasks"
       )}
