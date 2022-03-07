@@ -3,8 +3,8 @@ import Card from "react-bootstrap/Card";
 import {SortableElement} from 'react-sortable-hoc';
 
 //const SortableItem = SortableElement(Task)
-const SortableItem = SortableElement(({Task}) => <li>{Task}</li>);
-console.log(SortableItem);
+const SortableItem = SortableElement(Task);
+
 const TaskList = ({ tasks, onDone }) => {
   return (
     <Card className="task-list-card">

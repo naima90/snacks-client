@@ -93,11 +93,17 @@ function Dashboard() {
   const state = {
     items: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'],
   };
-  const onSortEnd = ({oldIndex, newIndex}) => {
-    this.setState(({items}) => ({
-      items: arrayMove(items, oldIndex, newIndex),
-    }));
+  // const onSortEnd = ({oldIndex, newIndex}) => {
+  //   this.setState(({items}) => ({
+  //     items: arrayMove(items, oldIndex, newIndex),
+  //   }));
+  // };
+
+  const onSortEnd = (e) =>{
+    var newTasks = arrayMove(tasks, e.oldIndex, e.newIndex )
+    setTasks(newTasks)
   };
+  
   return (
     <div>
       <h1>Snacks</h1>
