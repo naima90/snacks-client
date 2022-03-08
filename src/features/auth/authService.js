@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/users/";
+const API_URL = "http://snacks-server.herokuapp.com/api/tasks/";
 
 // Register user
 const register = async (userData) => {
