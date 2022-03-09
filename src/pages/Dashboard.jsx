@@ -53,6 +53,7 @@ function Dashboard() {
       );
 
       setPremadeTasks(premadeTasks.data);
+      // console.log(premadeTasks.data);
     }
 
     if (user) {
