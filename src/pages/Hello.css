@@ -1,18 +1,13 @@
-/* .login-container {
-  /* background-color: red; */
-/* padding-top: 10%; */
-/* } */
-*/ *,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-body {
+.body {
   margin: 0;
   font-family: Roboto, -apple-system, "Helvetica Neue", "Segoe UI", Arial,
     sans-serif;
-  /* background: #3b4465; */
 }
 
 .forms-section {
@@ -20,17 +15,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: #7d8ec5; */
-  background-color: rgb(80, 80, 80);
-}
-
-.section-title {
-  font-size: 32px;
-  letter-spacing: 1px;
-  color: #fff;
 }
 
 .forms {
+  padding-top: 5%;
   display: flex;
   align-items: flex-start;
   margin-top: 30px;
@@ -204,78 +192,6 @@ body {
     background: #d7e7f1;
     transform: translate(-40%, 10px) scaleY(0.8);
   }
-}
-
-.form fieldset {
-  position: relative;
-  opacity: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  transition: all 0.3s ease-out;
-}
-
-.form-login fieldset {
-  transform: translateX(-50%);
-}
-
-.form-signup fieldset {
-  transform: translateX(50%);
-}
-
-.form-wrapper.is-active fieldset {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.4s ease-in, transform 0.35s ease-in;
-}
-
-.form legend {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  clip: rect(0 0 0 0);
-}
-
-.input-block {
-  margin-bottom: 20px;
-}
-
-.input-block label {
-  font-size: 14px;
-  color: #a1b4b4;
-}
-
-.input-block input {
-  display: block;
-  width: 100%;
-  margin-top: 8px;
-  padding-right: 15px;
-  padding-left: 15px;
-  font-size: 16px;
-  line-height: 40px;
-  color: #3b4465;
-  background: #eef9fe;
-  border: 1px solid #cddbef;
-  border-radius: 2px;
-}
-
-.form [type="submit"] {
-  opacity: 0;
-  display: block;
-  min-width: 120px;
-  margin: 30px auto 10px;
-  font-size: 18px;
-  line-height: 40px;
-  border-radius: 25px;
-  border: none;
-  transition: all 0.3s ease-out;
-}
-
-.form-wrapper.is-active .form [type="submit"] {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 0.4s ease-in;
 }
 
 .btn-login {

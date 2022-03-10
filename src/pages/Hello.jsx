@@ -5,13 +5,10 @@ import { toast } from "react-toastify";
 import Register from "../components/Register";
 import { register, login, reset } from "../features/auth/authSlice";
 import Login from "../components/Login";
-import { Container } from "react-bootstrap";
 import Spinner from "../components/Spinner";
 import "./Hello.css";
 
 function Hello() {
-  // const [switcher, setSwitcher] = useState(false);
-
   const [registerData, setRegisterData] = useState({
     registerName: "",
     registerEmail: "",
@@ -103,10 +100,10 @@ function Hello() {
       });
     });
   };
+
   return (
     <>
       <section className="forms-section">
-        <h1 className="section-title">Welcome</h1>
         <div className="forms">
           <div className="form-wrapper is-active">
             <button
@@ -118,15 +115,11 @@ function Hello() {
               <span className="underline"></span>
             </button>
             <div className="form form-login">
-              <div classNameName="row d-flex justify-content-around">
-                <div classNameName="col-3">
-                  <Login
-                    onSubmit={onLoginSubmit}
-                    onChange={onLoginChange}
-                    loginData={loginData}
-                  />
-                </div>
-              </div>
+              <Login
+                onSubmit={onLoginSubmit}
+                onChange={onLoginChange}
+                loginData={loginData}
+              />
             </div>
           </div>
           <div className="form-wrapper">
@@ -138,15 +131,13 @@ function Hello() {
               Sign Up
               <span className="underline"></span>
             </button>
-            <form className="form form-signup">
-              <div classNameName="col-3">
-                <Register
-                  onSubmit={onRegisterSubmit}
-                  onChange={onRegisterChange}
-                  registerData={registerData}
-                />
-              </div>
-            </form>
+            <div className="form form-signup">
+              <Register
+                onSubmit={onRegisterSubmit}
+                onChange={onRegisterChange}
+                registerData={registerData}
+              />
+            </div>
           </div>
         </div>
       </section>
