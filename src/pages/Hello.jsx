@@ -92,60 +92,64 @@ function Hello() {
     return <Spinner />;
   }
 
-  // const [switcher, setSwitcher] = useState(false)
-
-  // const handleSwitch = () => {
-  //   setSwitcher(s => !s)
-  // }
-
   const handleSwitch = () => {
-    const switchers = [...document.querySelectorAll('.switcher')]
-    switchers.forEach(item => {
-	    item.addEventListener('click', function() {
-		    switchers.forEach(item => item.parentElement.classList.remove('is-active'))
-		    this.parentElement.classList.add('is-active')
-	   })
-    })
-  }
+    const switchers = [...document.querySelectorAll(".switcher")];
+    switchers.forEach((item) => {
+      item.addEventListener("click", function () {
+        switchers.forEach((item) =>
+          item.parentElement.classList.remove("is-active")
+        );
+        this.parentElement.classList.add("is-active");
+      });
+    });
+  };
   return (
     <>
-  <section className="forms-section">
-  <h1 className="section-title">Welcome</h1>
-  <div className="forms">
-    <div className="form-wrapper is-active">
-      <button type="button" className="switcher switcher-login" onClick={handleSwitch}>
-        Login
-        <span className="underline"></span>
-      </button>
-      <div className="form form-login">
-      <div classNameName="row d-flex justify-content-around">
-          <div classNameName="col-3">
-            <Login
-              onSubmit={onLoginSubmit}
-              onChange={onLoginChange}
-              loginData={loginData}
-            />
+      <section className="forms-section">
+        <h1 className="section-title">Welcome</h1>
+        <div className="forms">
+          <div className="form-wrapper is-active">
+            <button
+              type="button"
+              className="switcher switcher-login"
+              onClick={handleSwitch}
+            >
+              Login
+              <span className="underline"></span>
+            </button>
+            <div className="form form-login">
+              <div classNameName="row d-flex justify-content-around">
+                <div classNameName="col-3">
+                  <Login
+                    onSubmit={onLoginSubmit}
+                    onChange={onLoginChange}
+                    loginData={loginData}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="form-wrapper">
+            <button
+              type="button"
+              className="switcher switcher-signup"
+              onClick={handleSwitch}
+            >
+              Sign Up
+              <span className="underline"></span>
+            </button>
+            <form className="form form-signup">
+              <div classNameName="col-3">
+                <Register
+                  onSubmit={onRegisterSubmit}
+                  onChange={onRegisterChange}
+                  registerData={registerData}
+                />
+              </div>
+            </form>
           </div>
         </div>
-      </div>
-    </div>
-    <div className="form-wrapper">
-      <button type="button" className="switcher switcher-signup" onClick={handleSwitch}>
-        Sign Up
-        <span className="underline"></span>
-      </button>
-      <form className="form form-signup">
-        <div classNameName="col-3">
-            <Register
-              onSubmit={onRegisterSubmit}
-              onChange={onRegisterChange}
-              registerData={registerData}
-            />
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
+      </section>
     </>
   );
 }
