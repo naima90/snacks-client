@@ -70,12 +70,12 @@
 }
 
 .form-wrapper.is-active .switcher-login {
-  color: #fff;
+  color: #5d8181;
   transform: translateX(90px);
 }
 
 .form-wrapper.is-active .switcher-signup {
-  color: #fff;
+  color: #5d8181;
   transform: translateX(-90px);
 }
 
