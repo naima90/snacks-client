@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import Register from "../components/Register";
 import { register, login, reset } from "../features/auth/authSlice";
 import Login from "../components/Login";
-import { Container } from "react-bootstrap";
 import Spinner from "../components/Spinner";
 import "./Hello.css";
 
@@ -90,27 +89,58 @@ function Hello() {
     return <Spinner />;
   }
 
+  const handleSwitch = () => {
+    const switchers = [...document.querySelectorAll(".switcher")];
+    switchers.forEach((item) => {
+      item.addEventListener("click", function () {
+        switchers.forEach((item) =>
+          item.parentElement.classList.remove("is-active")
+        );
+        this.parentElement.classList.add("is-active");
+      });
+    });
+  };
+
   return (
     <>
-      <Container className="login-container">
-        <div className="row d-flex justify-content-around">
-          <div className="col-3">
-            <Login
-              onSubmit={onLoginSubmit}
-              onChange={onLoginChange}
-              loginData={loginData}
-            />
+      <section className="forms-section">
+        <div className="forms">
+          <div className="form-wrapper is-active">
+            <button
+              type="button"
+              className="switcher switcher-login"
+              onClick={handleSwitch}
+            >
+              Login
+              <span className="underline"></span>
+            </button>
+            <div className="form form-login">
+              <Login
+                onSubmit={onLoginSubmit}
+                onChange={onLoginChange}
+                loginData={loginData}
+              />
+            </div>
           </div>
-
-          <div className="col-3">
-            <Register
-              onSubmit={onRegisterSubmit}
-              onChange={onRegisterChange}
-              registerData={registerData}
-            />
+          <div className="form-wrapper">
+            <button
+              type="button"
+              className="switcher switcher-signup"
+              onClick={handleSwitch}
+            >
+              Sign Up
+              <span className="underline"></span>
+            </button>
+            <div className="form form-signup">
+              <Register
+                onSubmit={onRegisterSubmit}
+                onChange={onRegisterChange}
+                registerData={registerData}
+              />
+            </div>
           </div>
         </div>
-      </Container>
+      </section>
     </>
   );
 }
