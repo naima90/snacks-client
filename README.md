@@ -1,6 +1,6 @@
 ## Tidbits Link
 
-(https://tidbits-project.netlify.app)
+https://tidbits-project.netlify.app
 
 ## Description
 
