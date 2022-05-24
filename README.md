@@ -1,6 +1,11 @@
+## Tidbits Link
+
+[Tidbits](https://tidbits-project.netlify.app/hello)
+
 ## Description
 
 This is the client-side of snacks-app. It works alongside a rest API - https://snacks-server.herokuapp.com/api/tasks
+
 
 ## Features
 
